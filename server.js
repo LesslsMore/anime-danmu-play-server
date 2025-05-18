@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 10000;
 
 app.use(cors());
 app.use("/api", createProxyMiddleware({
-    target: "https://gofilm-api.onrender.com",
+    target: process.env.API_URL,
     changeOrigin: true,
     pathRewrite: { "^/api": "" },
 }));
