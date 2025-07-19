@@ -15,8 +15,8 @@ const danmuProxy = createProxyMiddleware({
         proxyReq: (proxyReq, req, res) => {
             // 添加自定义请求头
             console.log('Proxying request to:', req.url);
-            proxyReq.setHeader('X-AppId', process.env.danmu_appId);
-            proxyReq.setHeader('X-AppSecret', process.env.danmu_appSecret);
+            proxyReq.setHeader('X-AppId', process.env.DANMU_APPID);
+            proxyReq.setHeader('X-AppSecret', process.env.DANMU_APPSECRET);
         },
         proxyRes: () => {},
         proxyReqWs: () => {},

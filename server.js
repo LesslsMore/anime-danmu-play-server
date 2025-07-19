@@ -14,11 +14,11 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 app.use(cors());
-app.use("/api", createProxyMiddleware({
-    target: process.env.API_URL,
-    changeOrigin: true,
-    pathRewrite: { "^/api": "" },
-}));
+// app.use("/api", createProxyMiddleware({
+//     target: process.env.API_URL,
+//     changeOrigin: true,
+//     pathRewrite: { "^/api": "" },
+// }));
 
 app.use("/proxy", danmuProxy);
 
